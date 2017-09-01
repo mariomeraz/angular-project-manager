@@ -19,7 +19,8 @@ export class ProjectListComponent implements OnInit {
   ngOnInit() {
     this._projectListService.getAll().subscribe(
       (data: Project[]) => {
-
+        this.projects = data;
+        this.isLoading = false;
       },
       err => {
         console.error(err);
