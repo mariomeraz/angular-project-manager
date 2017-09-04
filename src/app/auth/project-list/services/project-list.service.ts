@@ -7,11 +7,7 @@ import { Project } from "../models/project.models";
 
 @Injectable()
 export class ProjectListService{
-    projects: Array<Project> = [];
-
-
     constructor(private _http: Http){
-
     }
 
     getAll() : Observable<Array<Project>> {

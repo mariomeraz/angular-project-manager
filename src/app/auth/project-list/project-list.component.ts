@@ -32,4 +32,9 @@ export class ProjectListComponent implements OnInit {
 
   }
 
+  onDeleteProject(project: Project){
+    
+  }
+
+
 }
