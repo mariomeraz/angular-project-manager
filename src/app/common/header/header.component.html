@@ -1,11 +1,11 @@
 <header class="b-header">
-  
+
     <!--[if lt IE 7]>
     <p class="browsehappy">Nos está visitando con un <strong>navegador antiguo</strong>. Para disfrutar este
       sitio que hemos preparado para ti, por favor descarga un navegador más nuevo y mejor <a
         href="http://browsehappy.com/">aquí</a>, gracias.</p>
     <![endif]-->
-  
+
     <nav class="navbar navbar-default webtraining-nav" role="navigation">
       <div class="container">
         <div class="row">
@@ -26,13 +26,22 @@
             <div class="collapse navbar-collapse" id="navbar-collapse">
               <ul class="nav navbar-nav pull-right">
                 <li class="leaf" >
-                  <a title="Cursos">Proyectos</a>
+                  <a
+                    routerLink="/proyectos"
+                    *ngIf="_authService.isLoggedIn()"
+                    title="Cursos">Proyectos</a>
                 </li>
                 <li class="leaf" >
-                  <a title="Iniciar sesión">Issues</a>
+                  <a
+                    *ngIf="_authService.isLoggedIn()"
+                    routerLink="/issues"
+                    title="Issues">Issues</a>
                 </li>
                 <li class="leaf">
-                  <a title="Cerrar sesión">Salir</a>
+                  <a
+                    *ngIf="_authService.isLoggedIn()"
+                    routerLink="/logout"
+                    title="Cerrar sesión">Salir</a>
                 </li>
               </ul>
             </div>
@@ -40,6 +49,5 @@
         </div>
       </div>
     </nav>
-  
+
   </header>
-  

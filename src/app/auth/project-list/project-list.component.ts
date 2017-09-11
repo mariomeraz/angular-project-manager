@@ -18,7 +18,6 @@ export class ProjectListComponent implements OnInit {
 
   ngOnInit() {
     this.getAllProjects();
-
   }
 
   getAllProjects() {
@@ -37,15 +36,19 @@ export class ProjectListComponent implements OnInit {
   }
 
 
-
   onDeleteProject(project: Project) {
-    this._projectListService.deleteProject(project).subscribe((data) => {
-      console.log(data);
-      this.getAllProjects();
-    });
-
-
-
+    this._projectListService.deleteProject(project).subscribe(
+      (data) => {
+        console.log(data);
+        this.getAllProjects();
+      },
+      err => {
+        console.error(err);
+      },
+      () => {
+        console.log('Finished!');
+      }
+    );
   }
 
 
